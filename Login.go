@@ -20,10 +20,11 @@ func Home() *tview.Flex {
 			QuitApp()
 		}).SetItemPadding(2)
 
+
+
 	formContainer.AddItem(form, 8, 1, true)
 
 	greeter := tview.NewTextView()
-
 	greeterText, err := os.ReadFile("asciiGreeter.txt")
 
 	if err != nil {
@@ -33,7 +34,7 @@ func Home() *tview.Flex {
 	greeter.SetText(string(greeterText))
 
 	HomeContainer.AddItem(greeter, 6, 0, false)
-	HomeContainer.AddItem(formContainer, 20, 0, true).SetBorder(true).SetTitle("GoQuiz - Login")
+	HomeContainer.AddItem(formContainer, 20, 0, true).SetBorder(true).SetTitle("GoQuiz - Login").SetBorderPadding(1, 1, 1, 1)
 
 	return HomeContainer
 

@@ -22,6 +22,8 @@ func SubmitPage() *tview.Flex {
 	SubmitPageContainer.AddItem(prompt, 1, 0, false).
 		AddItem(SubmitPageForm, 0, 1, true)
 
+		SubmitPageContainer.SetBorder(true).SetTitle("Submit").SetBorderPadding(1,1,1,1)
+
 	return SubmitPageContainer
 
 }

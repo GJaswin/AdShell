@@ -236,6 +236,7 @@ func Quiz() *tview.Flex {
 			if qno < 20 {
 				answered(i)
 			} else {
+				answers = append(answers, i)
 				submitPage := SubmitPage()
 				pages.AddAndSwitchToPage("submitpage", submitPage, true)
 			}
