@@ -1,8 +1,10 @@
 package main
 
 import (
-	"github.com/rivo/tview"
+	"log"
 	"os"
+
+	"github.com/rivo/tview"
 )
 
 func Home() *tview.Flex {
@@ -20,9 +22,14 @@ func Home() *tview.Flex {
 
 	formContainer.AddItem(form, 8, 1, true)
 
-	greeterText, _ := os.ReadFile("asciiGreeter.txt")
-
 	greeter := tview.NewTextView()
+
+	greeterText, err := os.ReadFile("asciiGreeter.txt")
+
+	if err != nil {
+		log.Println(err)
+	}
+
 	greeter.SetText(string(greeterText))
 
 	HomeContainer.AddItem(greeter, 6, 0, false)
