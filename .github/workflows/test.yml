@@ -1,0 +1,8 @@
+name: test
+run-name: ${{github.actor}} is testing workflows
+on: push
+jobs:
+    check-bats-version:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
